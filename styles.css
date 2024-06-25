@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: blue; /* начальный цвет */
+    transition: background-color 0.5s ease;
+}
+
+.switch-container {
+    position: relative;
+}
+
+.switch {
+    display: none;
+}
+
+.switch-label {
+    display: block;
+    width: 180px;  /* Увеличено в три раза */
+    height: 102px; /* Увеличено в три раза */
+    background-color: #ccc;
+    border-radius: 102px; /* Увеличено в три раза */
+    cursor: pointer;
+    position: relative;
+}
+
+.switch-label::after {
+    content: '';
+    position: absolute;
+    top: 6px; /* Увеличено в три раза */
+    left: 6px; /* Увеличено в три раза */
+    width: 90px; /* Увеличено в три раза */
+    height: 90px; /* Увеличено в три раза */
+    background-color: white;
+    border-radius: 50%;
+    transition: left 0.5s ease;
+}
+
+.switch:checked + .switch-label {
+    background-color: #4caf50;
+}
+
+.switch:checked + .switch-label::after {
+    left: 84px; /* Увеличено в три раза */
+}
